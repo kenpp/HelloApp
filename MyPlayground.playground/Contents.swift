@@ -56,12 +56,13 @@ for todo in todos{
     print(todo)
 }
 //: 辞書（列挙型）の使い方
+//: as Anyをつけると、エラーがでなくなった。
 var numberOfTires = ["車":4, "バイク":2, "船":0]
-print(numberOfTires["車"])
+print(numberOfTires["車"] as Any)
 
 //:nullではなくて、nilになる。
 numberOfTires["車"] = nil
-print(numberOfTires["車"])
+print(numberOfTires["車"] as Any)
 
 //:関数の使い方
 func kuku2dan(){
@@ -95,3 +96,23 @@ func areaOfTraiangle1(withBase base:Int, height:Int) -> Int{
 }
 var area = areaOfTraiangle1(withBase: 3, height: 4)
 print(area)
+
+//: 構造体の使い方
+struct Taiyaki{
+    //:メンバ変数
+    var nakami = "あんこ"
+    //:メンバ関数
+    func sayNakami() {
+        print("中身は" + nakami + "です。")
+    }
+}
+
+var taiyaki = Taiyaki()
+taiyaki.nakami = "クリーム"
+taiyaki.sayNakami()
+
+var taiyakiKosian = Taiyaki()
+taiyakiKosian.nakami = "こしあん"
+taiyakiKosian.sayNakami()
+
+
