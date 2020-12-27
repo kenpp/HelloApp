@@ -116,3 +116,29 @@ taiyakiKosian.nakami = "こしあん"
 taiyakiKosian.sayNakami()
 
 
+//: 正方形を作る関数
+struct Square {
+    //: 辺の長さ
+    var sideLength = 3
+    //: 面積
+    //: コンピューティットプロパティ
+    /*
+    var area:Int{
+        let result = sideLength * sideLength
+        return result
+    }
+    */
+    //: ｛｝内に一行しかなかったら、省略することができる！
+    var area:Int{
+        sideLength * sideLength
+    }
+    //:以下の様に、書くことも可能！
+    func area2()-> Int{
+        let result = sideLength * sideLength
+        return result
+    }
+}
+ 
+//: コンピューティッドプロパティは、引数を取ることができない。
+//: コンピューティッドプロパティは、戻り値が必ずある。
+
